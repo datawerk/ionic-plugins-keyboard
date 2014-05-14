@@ -14,11 +14,9 @@
     __weak IonicKeyboard* weakSelf = self;
 
     //set defaults
-    weakSelf.hideKeyboardAccessoryBar = NO;
-    weakSelf.disableScroll = NO;
+    self.hideKeyboardAccessoryBar = NO;
+    self.disableScroll = NO;
   
-    weakSelf.webView.scrollView.delegate = self;
-    
     _keyboardShowObserver = [nc addObserverForName:UIKeyboardWillShowNotification
                                object:nil
                                queue:[NSOperationQueue mainQueue]
@@ -46,16 +44,16 @@
 
 - (void)setDisableScroll:(BOOL)disableScroll
 {
-    __weak IonicKeyboard* weakSelf = self;
-
     if (disableScroll == _disableScroll) {
         return;
     }
     if (disableScroll){
-        weakSelf.webView.scrollView.scrollEnabled = NO;
+        self.webView.scrollView.scrollEnabled = NO;
+        self.webView.scrollView.delegate = self;
     }
     else {
-        weakSelf.webView.scrollView.scrollEnabled = YES;
+        self.webView.scrollView.scrollEnabled = YES;
+        self.webView.scrollView.delegate = nil;
     }
 
     _disableScroll = disableScroll;
@@ -69,16 +67,14 @@
 
 - (void)setHideKeyboardAccessoryBar:(BOOL)hideKeyboardAccessoryBar
 {
-    __weak IonicKeyboard* weakSelf = self;
-
     if (hideKeyboardAccessoryBar == _hideKeyboardAccessoryBar) {
         return;
     }
     if (hideKeyboardAccessoryBar){
-        weakSelf.webView.hackishlyHidesInputAccessoryView = YES;
+        self.webView.hackishlyHidesInputAccessoryView = YES;
     }
     else {
-        weakSelf.webView.hackishlyHidesInputAccessoryView = NO;
+        self.webView.hackishlyHidesInputAccessoryView = NO;
     }
 
     _hideKeyboardAccessoryBar = hideKeyboardAccessoryBar;
@@ -130,3 +126,4 @@
 }
 
 @end
+

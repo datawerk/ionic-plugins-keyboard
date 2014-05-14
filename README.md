@@ -3,6 +3,8 @@ Keyboard
 
 The `Keyboard` object on the `cordova.plugins` object provides functions to make interacting with the keyboard easier, and fires events to indicate that the keyboard will hide/show.
 
+    cordova plugin add https://github.com/driftyco/ionic-plugins-keyboard.git
+
 Methods
 -------
 
@@ -36,8 +38,8 @@ Keyboard.hideKeyboardAccessoryBar
 
 Hide the keyboard accessory bar with the next, previous and done buttons.
 
-    Keyboard.hideKeyboardAccessoryBar(true);
-    Keyboard.hideKeyboardAccessoryBar(false);
+    cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+    cordova.plugins.Keyboard.hideKeyboardAccessoryBar(false);
 
 Supported Platforms
 -------------------
@@ -50,7 +52,7 @@ Keyboard.close
 
 Close the keyboard if it is open.
 
-    Keyboard.close();
+    cordova.plugins.Keyboard.close();
 
 Supported Platforms
 -------------------
@@ -63,7 +65,7 @@ Keyboard.disableScroll
 
 Disable native scrolling, useful if you are using JavaScript to scroll
 
-    Keyboard.disableScroll();
+    cordova.plugins.Keyboard.disableScroll();
 
 Supported Platforms
 -------------------
