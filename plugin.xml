@@ -2,11 +2,13 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     id="com.ionic.keyboard"
-    version="0.0.1">
+    version="1.0.3">
     <name>Keyboard</name>
     <description>Ionic Keyboard Plugin</description>
     <license>Apache 2.0</license>
     <keywords>Ionic,keyboard</keywords>
+    <repo>https://github.com/driftyco/ionic-plugins-keyboard.git</repo>
+    <issue>https://github.com/driftyco/ionic-plugins-keyboard/issues</issue>
 
   <js-module src="www/keyboard.js" name="keyboard">
     <clobbers target="cordova.plugins.Keyboard" />
@@ -35,8 +37,8 @@
 
         <header-file src="src/ios/IonicKeyboard.h" />
         <source-file src="src/ios/IonicKeyboard.m" />
-        <header-file src="src/ios/UIWebViewAccessoryHiding.h" />
-        <source-file src="src/ios/UIWebViewAccessoryHiding.m" />
+        <header-file src="src/ios/UIWebViewExtension.h" />
+        <source-file src="src/ios/UIWebViewExtension.m" />
     </platform>
 
 </plugin>
